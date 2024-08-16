@@ -31,7 +31,7 @@ const run = async () => {
 		await mongoose.connect(uri)
 
 		// HTTP Server Up
-		const httpServer = app.listen(3000, () => console.log('Server up'))
+		const httpServer = app.listen(8080, () => console.log('Server up'))
 		// Websocket Server Up
 		const io = new Server(httpServer)
 

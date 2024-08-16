@@ -79,6 +79,11 @@ class ProductManager {
 				thumbnails: thumbnails || []
 			}
 
+			const existingProduct = await productsModel.findOne({ code: newProduct.code });
+    		if (existingProduct) {
+      			throw new Error(`El código ${newProduct.code} ya existe`);
+    		}
+
 			await productsModel.create(newProduct)
 
 			return this.getProducts()

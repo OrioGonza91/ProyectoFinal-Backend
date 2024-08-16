@@ -56,7 +56,9 @@ class CartManager {
 		if(!cartId || !productId) throw new Error('Missing required arguments: cart ID or product ID')
 		
 		try{
-			const cart = await cartsModel.findById(cartId)
+			
+			let cart = await cartsModel.findById(cartId)
+			
 			const indexProduct = cart.products.findIndex((item) => item.product == productId)
 			
 			if (indexProduct < 0) {
@@ -90,6 +92,8 @@ class CartManager {
 				return cart
 			}
 		}catch(error){
+			
+			
 			throw new Error(`Error trying to add a new product to cart: ${error}`)
 		}
 	}

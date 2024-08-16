@@ -1,8 +1,9 @@
-<nav class="d-flex flex-column container">
+{{!-- <nav class="d-flex flex-column container"> --}}
 
     <div class="container" id="products-container">
-
+    
         {{#each data.products}}
+        {{#if this.product}}
         <div class="card" style="width: 18rem;">
             <img src="{{this.product.thumbnails.[0]}}" class="card-img-top" alt="{{this.product.description}}">
 
@@ -23,6 +24,9 @@
                 <a href="/product/{{this.product._id}}" class="btn btn-primary">Ver más</a>
             </div>
         </div>
+        
+        {{/if}}
+        
         {{/each}}
     </div>
 

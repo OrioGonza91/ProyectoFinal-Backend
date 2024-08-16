@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	const addToCartButtons = document.querySelectorAll('.addToCart')
+	
 	for (const button of addToCartButtons) {
 		button.addEventListener('click', () => {
 			const productId = button.getAttribute('data-product-id')
@@ -77,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				quantity: parseInt(productQuantity.innerHTML)
 			}
 
-			fetch(`http://localhost:3000/api/carts/64e792367d17e9cc371c7c06/product/${newProduct.id}`, {
+			fetch(`http://localhost:8080/api/carts/66be766148409ccbcd337864/product/${newProduct.id}`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -132,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		button.addEventListener('click', () => {
 			const productId = button.getAttribute('data-product-id')
 			
-			fetch(`http://localhost:3000/api/carts/64e792367d17e9cc371c7c06/product/${productId}`, {
+			fetch(`http://localhost:8080/api/carts/66be766148409ccbcd337864/product/${productId}`, {
 				method: 'DELETE',
 				headers: {
 					'Content-Type': 'application/json'

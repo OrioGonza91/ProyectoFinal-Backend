@@ -33,7 +33,7 @@ router.post('/:cid/product/:pid', async (req, res) => {
 	if (!req.params.cid || !req.params.pid || !req.body) {
 		res.status(400).send({ status: 'Error', payload: 'Missed required arguments: cart id, product id or product quantity' })
 	}
-	
+
 	try {
 		const cartId = req.params.cid
 		const productId = req.params.pid

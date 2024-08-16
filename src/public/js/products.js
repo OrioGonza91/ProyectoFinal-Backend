@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				quantity: parseInt(productQuantity.innerHTML)
 			}
 
-			fetch(`http://localhost:8080/api/carts/64e792367d17e9cc371c7c06/product/${newProduct.id}`, {
+			fetch(`http://localhost:8080/api/carts/66be766148409ccbcd337864/product/${newProduct.id}`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
