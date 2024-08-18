@@ -84,9 +84,9 @@ class ProductManager {
       			throw new Error(`El código ${newProduct.code} ya existe`);
     		}
 
-			await productsModel.create(newProduct)
+			return await productsModel.create(newProduct)
 
-			return this.getProducts()
+			// return this.getProducts()
 		} catch (error) {
 			throw new Error(`Error trying to add a product: ${error}`)
 		}

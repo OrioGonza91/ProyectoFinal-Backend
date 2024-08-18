@@ -25,7 +25,13 @@
                 <input type="number" class="form-control" id="stock" placeholder="Stock">
             </div>
             <div class="mb-3">
-                <input type="text" class="form-control" id="category" placeholder="Categoria">
+                {{!-- <input type="text" class="form-control" id="category" placeholder="Categoria"> --}}
+                <select id="category" name="categoria" class="form-select" aria-label="Default select example">
+                    <option value="jardin">Jardin</option>
+                    <option value="hogar">Hogar</option>
+                    <option value="escritorio">Escritorio</option>
+                    <option value="dormitorio">Dormitorio</option>
+                </select>
             </div>
             <div class="mb-3">
                 <textarea class="form-control" id="thumbnails"
