@@ -29,7 +29,7 @@
                 <select id="category" name="categoria" class="form-select" aria-label="Default select example">
                     <option value="jardin">Jardin</option>
                     <option value="hogar">Hogar</option>
-                    <option value="escritorio">Escritorio</option>
+                    <option value="escritorios">Escritorios</option>
                     <option value="dormitorio">Dormitorio</option>
                 </select>
             </div>
@@ -37,10 +37,10 @@
                 <textarea class="form-control" id="thumbnails"
                     placeholder="Imagenes (Separar por punto y coma)"></textarea>
             </div>
-            <div class="mb-3 form-check">
+            {{!-- <div class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input" id="status">
                 <label class="form-check-label" for="status">Crear y publicar</label>
-            </div>
+            </div> --}}
             <button type="submit" class="btn btn-primary">Crear</button>
         </form>
     </div>
@@ -49,5 +49,6 @@
 <section id="products-container">
 
 </section>
+
 <script src="/socket.io/socket.io.js"></script>
 <script src="../js/realTimeProducts.js"></script>

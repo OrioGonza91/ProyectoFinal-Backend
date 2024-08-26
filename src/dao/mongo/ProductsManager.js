@@ -73,7 +73,7 @@ class ProductManager {
 				description: description.trim(),
 				code: code.trim(),
 				price: Number(price),
-				status: Boolean(status),
+				status: true,
 				stock: Number(stock),
 				category: category.trim(),
 				thumbnails: thumbnails || []
@@ -84,9 +84,9 @@ class ProductManager {
       			throw new Error(`El código ${newProduct.code} ya existe`);
     		}
 
-			return await productsModel.create(newProduct)
+			await productsModel.create(newProduct)
 
-			// return this.getProducts()
+			return this.getProducts()
 		} catch (error) {
 			throw new Error(`Error trying to add a product: ${error}`)
 		}

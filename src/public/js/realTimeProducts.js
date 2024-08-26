@@ -71,7 +71,7 @@ form.addEventListener('submit', async (e) => {
 	const price = document.getElementById('price').value
 	const stock = document.getElementById('stock').value
 	const category = document.getElementById('category').value
-	const statusCheck = document.getElementById('status').checked
+	// const statusCheck = document.getElementById('status').checked
 	
 	const thumbnails = document.getElementById('thumbnails').value
 	const thumbnailURLs = thumbnails.split(';')
@@ -82,12 +82,17 @@ form.addEventListener('submit', async (e) => {
 		description: description,
 		code: code,
 		price: price,
-		status: statusCheck,
+		status: true,
 		stock: stock,
 		category: category,
 		thumbnails: cleanedURLs
 	}
 
+	// fetch('http://localhost:8080/api/products', {method: 'POST', body: newProduct}).then((response) =>{
+	// 	console.log('Cualquier gilada', response)
+	// }).catch((error) => {
+	// 	console.log(error)
+	// })
 	socket.emit('addProduct', newProduct)
 	form.reset()
 })

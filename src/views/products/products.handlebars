@@ -44,7 +44,7 @@
 <div class="container" id="products-container">
     {{#each products.payload}}
     <div class="card" style="width: 18rem;">
-        <img src="{{this.thumbnails.[0]}}" class="card-img-top" alt="{{this.description}}">
+        <img src="{{this.thumbnails.[0]}}" class="card-img-top h-100" alt="{{this.description}}">
 
         {{#if this.status}}
         <p class="card-img-overlay aviable bg-success">Disponible</p>
@@ -106,5 +106,6 @@
         </ul>
     </nav>
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="../js/products.js"></script>
