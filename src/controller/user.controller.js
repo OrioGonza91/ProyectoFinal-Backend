@@ -14,9 +14,10 @@ export const login = async (req, res) => {
             const token = generadorToken({ email: userFound.email, nombre: userFound.nombre })
             return res.status(200).cookie('currentUser', token,{ maxAge: 60000, signed: true, httpOnly:true }).json({message:'login'})
         }
-        return res.status(200).json({message: 'error login'})
+        return res.status(400).json({message: 'error login'})
+        // throw new Error('Credenciales invalidas')
     }catch (e){
-        return res.json({ message: e })
+        return res.status(401).json({ message: e })
     }
 }
 

@@ -28,6 +28,8 @@ buttonLogin.addEventListener("click", async () => {
     if (response.status === 200 || response.status < 300)
       window.location.href = "/products";
 
+    console.log(response)
+
   } catch (e) {
     console.log("error", e);
   }

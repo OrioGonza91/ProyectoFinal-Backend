@@ -18,15 +18,10 @@ export const generadorToken = (user) => {
     return token
 }
 
-export const decodeToken = (req, res, next) => {
-    const token = req.headers.authorization
-
-    if(!token) return res.status(403).json({ message: 'Error token' });
-
-    jwt.verify(token,process.env.SECRET, (err, userDecoded) => {
-        if(err) return  res.status(400).json({message: 'Error token'})
-            console.log(userDecoded)
-        req.user = userDecoded.user;
-        next()
-    })
+export const getJWTCookie = (req) => {
+    let token = null
+    if(req.signedCookies){
+        token = req.signedCookies['currentUser']
+    }
+    return token
 }

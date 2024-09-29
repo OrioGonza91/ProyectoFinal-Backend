@@ -5,6 +5,8 @@ import { Server } from 'socket.io'
 import mongoose from 'mongoose'
 import cookieParser from 'cookie-parser'
 import dotenv from 'dotenv'
+import passport from 'passport'
+import initializePassport from './passport/jwt.passport.js'
 
 
 // Routes
@@ -25,6 +27,8 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static('./src/public'))
 app.use(cookieParser(process.env.SECRET))
+initializePassport()
+app.use(passport.initialize())
 // Handlebars config
 app.engine('handlebars', handlebars.engine())
 app.set('views', './src/views')
